@@ -14,26 +14,23 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ffd6e7, #fff0f7, #eadcff);
   color: #4b3040;
 }
 
 .card {
-  width: 100%;
   max-width: 520px;
+  margin: auto;
   background: white;
   border-radius: 28px;
-  padding: 30px 22px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  padding: 28px 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.15);
 }
 
 .page {
   display: none;
+  text-align: center;
 }
 
 .page.active {
@@ -41,12 +38,11 @@ body {
 }
 
 .heart {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 h1 {
   font-size: 30px;
-  margin: 10px 0;
 }
 
 h2 {
@@ -61,7 +57,7 @@ p {
 button {
   border: none;
   border-radius: 30px;
-  padding: 15px 24px;
+  padding: 14px 22px;
   margin: 8px 4px;
   background: #e85599;
   color: white;
@@ -78,7 +74,7 @@ button {
 input {
   width: 100%;
   max-width: 280px;
-  padding: 15px;
+  padding: 14px;
   border-radius: 14px;
   border: 1px solid #e0aec5;
   font-size: 17px;
@@ -88,7 +84,6 @@ input {
 .error {
   color: #d13c78;
   min-height: 25px;
-  margin: 8px;
 }
 
 .letter {
@@ -115,160 +110,111 @@ video {
 
 <!-- HOME -->
 <div id="home" class="page active">
+  <div class="heart">💗</div>
+  <h1>Happy 18th Birthday, Bie! 🎂</h1>
+  <p>I made a little surprise just for you. 💕</p>
 
-<div class="heart">💗</div>
-
-<h1>Happy 18th Birthday, Bie! 🎂</h1>
-
-<p>
-I made a little surprise just for you. 💕
-</p>
-
-<button onclick="showPage('password')">
-Open Message 💌
-</button>
-
+  <button onclick="showPage('password')">
+    Open Message 💌
+  </button>
 </div>
-
 
 <!-- PASSWORD -->
 <div id="password" class="page">
+  <div class="heart">🔐</div>
+  <h2>Secret Message</h2>
+  <p>Enter the password to open your birthday letter. 💗</p>
 
-<div class="heart">🔐</div>
+  <input id="pass" type="password" placeholder="Password">
 
-<h2>Secret Message</h2>
+  <div id="error" class="error"></div>
 
-<p>
-Enter the password to open your birthday letter. 💗
-</p>
+  <button onclick="checkPassword()">
+    Unlock 💕
+  </button>
 
-<input
-id="pass"
-type="password"
-placeholder="Password"
->
+  <br>
 
-<div id="error" class="error"></div>
-
-<button onclick="checkPassword()">
-Unlock 💕
-</button>
-
-<br>
-
-<button class="back" onclick="showPage('home')">
-Back
-</button>
-
+  <button class="back" onclick="showPage('home')">
+    Back
+  </button>
 </div>
-
 
 <!-- LETTER -->
 <div id="letter" class="page">
+  <div class="heart">🎂</div>
 
-<div class="heart">🎂</div>
+  <h2>Happy 18th Birthday, Bie! 💗</h2>
 
-<h2>
-Happy 18th Birthday, Bie! 💗
-</h2>
+  <div class="letter">
 
-<div class="letter">
+    <p>
+    Bie happy 18th birthday, bilis ng panahon no dati inaantay mo lang yang araw nayan ngayon birthday mona, I’m really happy na nandito ako para makasama ka sa special day nato kahit na malayo ako. I just want you to know how thankful I am na dumating ka sa buhay ko and how much I appreciate having you by my side.
+    </p>
 
-<p><b>Dear Bie,</b></p>
+    <p>
+    Bie alam kong alam mo kung gano ka kaspecial sakin at kung gano kita ka mahal. Thank you for all the time, effort, understanding and love you've given me. Thank you rin sa lahat ng memories, sa tawanan, kwentuhan, kulitan and even sa mga times na nagkakaroon tayo ng misunderstandings. Hindi naman perfect ang relationship natin pero I'm grateful na kahit may mga challenges, we still try to understand each other and choose to stay.
+    </p>
 
-<p>
-Happy 18th birthday! 🎉 I hope today gives you lots of happiness,
-laughter, and beautiful memories.
-</p>
+    <p>
+    18 kana bie sana wag mona masyado ipressure sarili mo sa mga bagay bagay and i hope continue chasing your dream kahit na may mga bagay na gumulo sa isip mo. gawin mo lahat ng bagay na ikakasaya mo bie. you still have time to learn, grown and discover your self. kapag may mga araw na kaawa ka ng mundo andito lang ako tutulungan kita papagaanin ko nararamdaman mo. sorry sa lahat ng mga nagawa kong mali sayo bie.
+    </p>
 
-<p>
-Welcome to a new chapter of your life. I hope you continue chasing
-your dreams, enjoying the little moments, and always remembering
-how special you are.
-</p>
+    <p>
+    Bie I’m so proud of you kase kahit mahirap na sitwasyon nakakayanan mo, nakakaproud ka sobra kase kapag may problema ka iiyak mo lang tas okay na ulit malakas na ulit laban na ulit ikaw. excited nako makita na mag kasama tayo sa future gusto kona makita kung babatuhin mo bako ng kaldero o plato kapag umuwi ako ng lasing. hindi ko man sinasabi sayo to palagi bie, but i really appreciate you more than you know. sobrang greatfull ko for the moment we spend together. gusto kolang sabihin sayo na mag enjoy ka ngayong araw mo deserve mo maging masaya ngayon at every day. lagi ko sinabi sayo always takecare of your self kase malayo ako sayo.
+    </p>
 
-<p>
-Have an amazing birthday, Bie. You deserve a day full of smiles,
-happiness, and good memories. 💕
-</p>
+    <p>
+    Happy 18th birthday ulit bie, ILOVEYOUSOMUCH😘❤️. ang hiling ko sayo ay maging masaya ka araw araw wag kana masyado mag papakastress at sana maging successful lahat ng gusto mo in this new chapter of your life. I’m so lucky to having you. enjoy your day this is your day ILOVEYOUSOMUCHH❤️😘
+    </p>
 
-<p>
-Happy 18th birthday! 🎂✨
-</p>
+  </div>
 
+  <button onclick="showPage('video')">
+    Play Video 🎬
+  </button>
 </div>
-
-<button onclick="showPage('video')">
-Play Video 🎬
-</button>
-
-</div>
-
 
 <!-- VIDEO -->
 <div id="video" class="page">
+  <div class="heart">🎬</div>
 
-<div class="heart">🎬</div>
+  <h2>One More Surprise 💗</h2>
 
-<h2>
-One More Surprise 💗
-</h2>
+  <video controls playsinline>
+    <source src="birthday-video.mp4" type="video/mp4">
+  </video>
 
-<p>
-Your birthday video will appear here once it is added.
-</p>
-
-<video controls playsinline>
-<source src="birthday-video.mp4" type="video/mp4">
-</video>
-
-<br>
-
-<button class="back" onclick="showPage('letter')">
-Back to Letter
-</button>
-
+  <button class="back" onclick="showPage('letter')">
+    Back to Letter
+  </button>
 </div>
 
 </div>
-
 
 <script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(function(page) {
+    page.classList.remove('active');
+  });
 
-function showPage(pageId) {
+  document.getElementById(id).classList.add('active');
 
-document.querySelectorAll(".page").forEach(function(page) {
-page.classList.remove("active");
-});
-
-document.getElementById(pageId).classList.add("active");
-
-window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
-
 
 function checkPassword() {
+  var password = document.getElementById("pass").value;
 
-var password =
-document.getElementById("pass").value;
-
-if (password.toUpperCase() === "ILOVEYOU") {
-
-document.getElementById("error").innerHTML = "";
-
-document.getElementById("pass").value = "";
-
-showPage("letter");
-
-} else {
-
-document.getElementById("error").innerHTML =
-"Wrong password 💗 Hint: ILOVEYOU";
-
+  if (password.toUpperCase() === "ILOVEYOU") {
+    document.getElementById("error").innerHTML = "";
+    document.getElementById("pass").value = "";
+    showPage("letter");
+  } else {
+    document.getElementById("error").innerHTML =
+      "Wrong password 💗";
+  }
 }
-
-}
-
 </script>
 
 </body>
