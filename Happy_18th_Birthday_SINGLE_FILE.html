@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 18th Birthday</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,serif}
+body{background:radial-gradient(circle at top,#7c1745 0%,#260714 48%,#090205 100%);color:white;overflow-x:hidden}
+#bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.screen{display:none;min-height:100vh;align-items:center;justify-content:center;padding:24px 16px;position:relative;z-index:1}
+.screen.active{display:flex;animation:fade .7s ease}
+.card{width:min(760px,100%);padding:32px 22px;text-align:center;border-radius:30px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);box-shadow:0 25px 80px rgba(0,0,0,.45)}
+h1{font-size:clamp(2.2rem,9vw,4.5rem);margin:12px 0;text-shadow:0 0 28px rgba(255,120,180,.8);animation:pulse 2.5s ease-in-out infinite}
+.subtitle{opacity:.88;font-size:1.1rem}
+.cakeBox{height:285px;position:relative;margin:auto;width:290px}
+.cake{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);animation:bounce 2s ease-in-out infinite}
+.layer{height:55px;background:linear-gradient(90deg,#ff659d,#ffc1d6,#ff659d);border-radius:15px;border-bottom:6px solid #bd3e70;margin:4px auto;box-shadow:inset 0 5px 10px rgba(255,255,255,.25)}
+.l1{width:220px}.l2{width:185px}.l3{width:150px;color:white;font-size:42px;font-weight:bold;line-height:52px}
+.icing{width:150px;height:24px;margin:auto;background:#fff1f6;border-radius:20px 20px 8px 8px}
+.candle{position:absolute;bottom:190px;width:8px;height:52px;background:#ffe99a;border-radius:5px}
+.c1{left:116px}.c2{left:146px}.c3{left:176px}
+.flame{position:absolute;bottom:237px;width:19px;height:29px;background:#ffd45e;border-radius:70% 30% 70% 30%;transform:rotate(45deg);animation:flicker .7s infinite alternate}
+.f1{left:111px}.f2{left:141px}.f3{left:171px}
+button{border:0;border-radius:999px;padding:16px 31px;margin:12px;font-size:1rem;font-weight:bold;color:white;background:linear-gradient(90deg,#ff3f86,#ff8663);cursor:pointer;box-shadow:0 0 28px rgba(255,70,140,.55);animation:buttonPulse 2s infinite}
+button:active{transform:scale(.96)}
+input{width:min(420px,100%);padding:17px;border-radius:15px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.2);color:white;text-align:center;font-size:1.1rem}
+#error{color:#ffb1ca;min-height:25px}
+.letter{width:min(850px,100%);text-align:left;line-height:1.9;font-size:1.08rem}
+.letter h1{text-align:center;font-size:clamp(2rem,7vw,3.6rem)}
+.letter p{white-space:pre-wrap}
+.signature{text-align:center;font-size:1.5rem;font-weight:bold;text-shadow:0 0 20px #ff5c99}
+.particle{position:fixed;top:-40px;animation:fall linear forwards;pointer-events:none}
+.balloon{position:fixed;width:55px;height:70px;border-radius:50%;opacity:.7;animation:float 6s ease-in-out infinite;z-index:0}
+.b1{left:4%;bottom:8%;background:#ff6d9e}.b2{right:5%;bottom:12%;background:#ffb2cc;animation-delay:-2s}.b3{right:9%;top:14%;background:#c799ff;animation-delay:-4s}
+.music{margin-top:18px;padding-top:15px;border-top:1px solid rgba(255,255,255,.2)}
+audio{width:100%;margin-top:10px}
+small{display:block;opacity:.7;margin-top:8px}
+@keyframes fall{to{transform:translateY(110vh) rotate(420deg)}}
+@keyframes fade{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+@keyframes bounce{50%{transform:translateX(-50%) translateY(-12px)}}
+@keyframes flicker{to{transform:rotate(35deg) scale(.85,1.15)}}
+@keyframes pulse{50%{transform:scale(1.035);text-shadow:0 0 45px #ff79ad}}
+@keyframes buttonPulse{50%{box-shadow:0 0 42px rgba(255,70,140,.9)}}
+@keyframes float{50%{transform:translateY(-30px) rotate(5deg)}}
+@media(max-width:500px){.card{padding:28px 16px}.cakeBox{transform:scale(.88);margin-bottom:-15px}.b3{display:none}}
+</style>
+</head>
+<body>
+<div id="bg"><div class="balloon b1"></div><div class="balloon b2"></div><div class="balloon b3"></div></div>
+
+<section id="home" class="screen active">
+ <div class="card">
+  <div class="cakeBox">
+   <div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div>
+   <div class="candle c1"></div><div class="candle c2"></div><div class="candle c3"></div>
+   <div class="cake"><div class="icing"></div><div class="layer l3">18</div><div class="layer l2"></div><div class="layer l1"></div></div>
+  </div>
+  <h1>Happy 18th Birthday, Bie</h1>
+  <p class="subtitle">I made this little surprise especially for you.</p>
+  <button onclick="showScreen('lock')">Open Message</button>
+  <div class="music">
+   <div>Play our song</div>
+   <input type="file" id="musicFile" accept="audio/*">
+   <audio id="audio" controls></audio>
+   <small>Select an audio file you have for “Tahanan” by Adie.</small>
+  </div>
+ </div>
+</section>
+
+<section id="lock" class="screen">
+ <div class="card">
+  <h1 style="font-size:2.5rem">Enter the password</h1>
+  <p>Type the password to open the message.</p>
+  <input id="pass" type="password" placeholder="Password">
+  <br><button onclick="unlock()">Unlock Message</button>
+  <p id="error"></p>
+ </div>
+</section>
+
+<section id="message" class="screen">
+ <div class="card letter">
+  <h1>Happy 18th Birthday, Bie</h1>
+  <div id="letterText"></div>
+  <p class="signature">ILOVEYOUSOMUCH😘❤️</p>
+ </div>
+</section>
+
+<script>
+const paragraphs = ["Bie happy 18th birthday, bilis ng panahon no dati inaantay mo lang yang araw nayan ngayon birthday mona, I’m really happy na nandito ako para makasama ka sa special day nato kahit na malayo ako. I just want you to know how thankful I am na dumating ka sa buhay ko and how much I appreciate having you by my side.", "Bie alam kong alam mo kung gano ka kaspecial sakin at kung gano kita ka mahal. Thank you for all the time, effort, understanding and love you"ve given me. Thank you rin sa lahat ng memories, sa tawanan, kwentuhan, kulitan and even sa mga times na nagkakaroon tayo ng misunderstandings. Hindi naman perfect ang relationship natin pero I"m grateful na kahit may mga challenges, we still try to understand each other and choose to stay.", "18 kana bie sana wag mona masyado ipressure sarili mo sa mga bagay bagay and i hope continue chasing your dream kahit na may mga bagay na gumulo sa isip mo. gawin mo lahat ng bagay na ikakasaya mo bie. you still have time to learn, grown and discover your self. kapag may mga araw na kaawa ka ng mundo andito lang ako tutulungan kita papagaanin ko nararamdaman mo. sorry sa lahat ng mga nagawa kong mali sayo bie.", "Bie I’m so proud of you kase kahit mahirap na sitwasyon nakakayanan mo, nakakaproud ka sobra kase kapag may problema ka iiyak mo lang tas okay na ulit malakas na ulit laban na ulit ikaw. excited nako makita na mag kasama tayo sa future gusto kona makita kung babatuhin mo bako ng kaldero o plato kapag umuwi ako ng lasing. hindi ko man sinasabi sayo to palagi bie, but i really appreciate you more than you know. sobrang greatfull ko for the moment we spend together. gusto kolang sabihin sayo na mag enjoy ka ngayong araw mo deserve mo maging masaya ngayon at every day. lagi ko sinabi sayo always takecare of your self kase malayo ako sayo.", "Happy 18th birthday ulit bie, ILOVEYOUSOMUCH😘❤️. ang hiling ko sayo ay maging masaya ka araw araw wag kana masyado mag papakastress at sana maging successful lahat ng gusto mo in this new chapter of your life. I’m so lucky to having you. enjoy your day this is your day ILOVEYOUSOMUCHH❤️😘"];
+function showScreen(id){
+ document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo(0,0);
+}
+function unlock(){
+ const p=document.getElementById('pass').value.trim();
+ if(p==='ILOVEYOU'){
+  showScreen('message'); typeLetter();
+ }else{document.getElementById('error').textContent='Wrong password. Try again.';}
+}
+document.getElementById('pass').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+function typeLetter(){
+ const box=document.getElementById('letterText');
+ if(box.dataset.done)return;
+ box.dataset.done='1';
+ let pi=0;
+ function addPara(){
+  if(pi>=paragraphs.length)return;
+  const el=document.createElement('p');box.appendChild(el);
+  let i=0;
+  const timer=setInterval(()=>{
+   if(i<paragraphs[pi].length){el.textContent+=paragraphs[pi].charAt(i);i++;}
+   else{clearInterval(timer);pi++;setTimeout(addPara,250);}
+  },6);
+ }
+ addPara();
+}
+document.getElementById('musicFile').addEventListener('change',function(){
+ const f=this.files[0];if(f){const a=document.getElementById('audio');a.src=URL.createObjectURL(f);a.play().catch(()=>{});}
+});
+const bg=document.getElementById('bg');
+function particle(){
+ const e=document.createElement('span');e.className='particle';
+ const icons=['♥','❤','♡','✿','❀','✦'];
+ e.textContent=icons[Math.floor(Math.random()*icons.length)];
+ e.style.left=(Math.random()*100)+'vw';
+ e.style.fontSize=(16+Math.random()*24)+'px';
+ e.style.animationDuration=(5+Math.random()*6)+'s';
+ e.style.opacity=.4+Math.random()*.55;
+ bg.appendChild(e);setTimeout(()=>e.remove(),12000);
+}
+for(let i=0;i<22;i++)setTimeout(particle,i*150);
+setInterval(particle,420);
+</script>
+</body>
+</html>
